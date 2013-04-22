@@ -1,0 +1,7 @@
+auto: true
+title: Again With This?
+source: ./src
+destination: ./public
+permalink: none
+exclude: [scss]
+future: false

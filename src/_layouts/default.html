@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Again with this?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" href="/css/selfloathing.css">
+    </head>
+    <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+
+        {% if page.body_class != 'home' %}
+        <a href="/" class="home-james">...</a>
+        {% endif %}
+
+        {% if page.previous.url %}
+        <a class="prev-btn" href="{{ page.previous.url|replace:'.html','' }}">
+            prev
+        </a>
+        {% endif %}
+
+        {% if page.next.url %}
+        <a class="next-btn" href="{{ page.next.url|replace:'.html','' }}">
+            next
+        </a>
+        {% endif %}
+
+        {{ content }}
+
+        {% if page.image %}
+        <img class="reminder" src="/images/{{ page.image }}" alt="">
+        {% endif %}
+
+        <footer role="contentinfo">
+            <p>
+                I’m <a href="http://twitter.com/thegaw">Tyler</a>. I’m not always
+                my greatest ally. I like to give myself little reminders about life.
+                These are them.
+            </p>
+        </footer>
+
+        <script>
+            var prevBtn = document.querySelector('.prev-btn'),
+                nextBtn = document.querySelector('.next-btn');
+
+            var keyupHandler = function (e) {
+                if (e.keyCode == 37) {
+                    if (prevBtn) {
+                        window.location = prevBtn.getAttribute('href');
+                    }
+                }
+
+                if (e.keyCode == 39) {
+                    if (nextBtn) {
+                        window.location = nextBtn.getAttribute('href');
+                    }
+                }
+
+                if (e.keyCode == 38) {
+                    window.location = '/';
+                }
+            };
+
+            window.addEventListener('keyup', keyupHandler, false);
+        </script>
+    </body>
+</html>

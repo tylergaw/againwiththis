@@ -1,0 +1,14 @@
+---
+layout: default
+body_class: home
+---
+
+    <ul class="the-shit-list">
+    {% for post in site.posts reversed %}
+        <li class="{{ post.body_class }}">
+            <a href="{{ post.url|replace:'.html','' }}">
+                {{ forloop.index }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>

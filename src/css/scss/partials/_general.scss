@@ -1,0 +1,169 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: darken(#1f1f1f, 4);
+    color: darken(#f1f1f1, 40);
+    @include mono;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+a {
+    color: blue;
+}
+
+.light-bg {
+    color: #1f1f1f;
+}
+
+.the-shit-list {
+    box-sizing: border-box;
+    font-size: 1.5em;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 1.5em 0;
+    width: 90%;
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin-bottom: 0.4em;
+    }
+
+    a {
+        display: block;
+        padding: 1.4em 1.6em 1.3em 1.6em;
+        text-decoration: none;
+    }
+}
+
+.home-james {
+    text-decoration: none;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: transparent;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    text-indent: -300em;
+    top: 0;
+    transition: background-color 0.1s;
+    width: 4em;
+    z-index: 20;
+
+    &::before {
+        background-color: transparent;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        content: "";
+        display: block;
+        height: 1.4em;
+        position: absolute;
+        top: 40%;
+        width: 1.4em;
+    }
+}
+
+.prev-btn {
+    &::before {
+        left: 1.4em;
+        @include rotate(135deg);
+    }
+}
+
+.next-btn {
+    right: 0;
+
+    &::before {
+        left: 0.7em;
+        @include rotate(-45deg);
+    }
+}
+
+.reminder {
+    display: block;
+    margin: 0 auto;
+    max-width: 1055px;
+    position: relative;
+    top: 15%;
+    width: 98%;
+}
+
+.sage-advice {
+    display: none;
+}
+
+[role="contentinfo"] {
+    bottom: 1.4em;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    p {
+        margin: 0 auto;
+        max-width: 600px;
+        width: 85%;
+    }
+}
+
+@mixin reminder($color, $borderColor: null) {
+    background-color: rgba($color, 1);
+
+    a:hover {
+        background-color: rgba(#fff, 0.5);
+    }
+
+    .prev-btn,
+    .next-btn {
+
+        @if $borderColor == null {
+            $borderColor: darken($color, 15);
+        }
+
+        &::before {
+            border-right-color: $borderColor;
+            border-bottom-color: $borderColor;
+        }
+
+        &:hover {
+            background-color: rgba(darken($color, 10), 0.3);
+        }
+    }
+
+    [role="contentinfo"] p {
+        background-color: $color;
+    }
+}
+
+.thedrinking {
+    @include reminder(#d0c900);
+}
+
+.callmom {
+    @include reminder(#9000ff);
+}
+
+.thebouncer {
+    @include reminder(#101010, lighten(#101010, 15));
+}
+
+.loveyourself {
+    @include reminder(#fff);
+}
+
+.yourjeans {
+    @include reminder(#5b6c81);
+}
+
+.donotleer {
+    @include reminder(#ff333e, darken(#ff333e, 20));
+}
