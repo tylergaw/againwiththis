@@ -167,3 +167,7 @@ a {
 .donotleer {
     @include reminder(#ff333e, darken(#ff333e, 20));
 }
+
+.wholepizza {
+    @include reminder(#922905);
+}
