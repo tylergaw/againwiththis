@@ -175,3 +175,7 @@ a {
 .somethingcool {
     @include reminder(#00b5d8);
 }
+
+.stopthinking {
+    @include reminder(#eae3ba);
+}
