@@ -103,8 +103,8 @@ a {
 }
 
 [role="contentinfo"] {
-    bottom: 1.4em;
-    position: fixed;
+    margin-top: 5em;
+    padding-bottom: 1em;
     width: 100%;
     z-index: 10;
 
@@ -112,6 +112,14 @@ a {
         margin: 0 auto;
         max-width: 600px;
         width: 85%;
+    }
+}
+
+@media screen and (min-height: 481px) {
+    [role="contentinfo"] {
+        bottom: 1.4em;
+        margin-top: 0;
+        position: fixed;
     }
 }
 
