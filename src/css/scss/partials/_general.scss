@@ -29,15 +29,20 @@ a {
     width: 90%;
 
     li {
+        box-sizing: border-box;
         display: inline-block;
         list-style: none;
         margin-bottom: 0.4em;
+        width: 20%;
     }
 
     a {
+        box-sizing: border-box;
         display: block;
-        padding: 1.4em 1.6em 1.3em 1.6em;
+        padding: 1.4em 1.4em 1.3em 1.4em;
+        text-align: center;
         text-decoration: none;
+        width: 100%;
     }
 }
 
@@ -186,4 +191,8 @@ a {
 
 .stopthinking {
     @include reminder(#eae3ba);
+}
+
+.voicemail {
+    @include reminder(#ff9600);
 }
