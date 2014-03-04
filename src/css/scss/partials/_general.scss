@@ -196,3 +196,7 @@ a {
 .voicemail {
     @include reminder(#ff9600);
 }
+
+.doingwell {
+    @include reminder(#62a62c);
+}
