@@ -204,3 +204,7 @@ a {
 .battles {
     @include reminder(#302b33);
 }
+
+.positive {
+    @include reminder(#17171E);
+}
