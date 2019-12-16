@@ -1,6 +1,5 @@
 title: Again With This?
 source: ./src
-destination: ./public
 permalink: none
 exclude: [css/scss]
 future: false
